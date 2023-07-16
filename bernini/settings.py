@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'base',
     'user',
     'product',
 ]
@@ -139,7 +140,13 @@ AUTH_USER_MODEL = 'user.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+
+    # limites por minuto a definir con equipo segun demanda de produccion, para test se definio lo siguiente
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '10/minute',  # Límite de peticiones para usuarios registrados
+        'anon': '5/minute',   # Límite de peticiones para usuarios anónimos (por dirección IP)
+    }
 }
 
 SIMPLE_JWT = {
