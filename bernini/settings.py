@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'base',
     'user',
     'product',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -177,4 +178,19 @@ CACHES = {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     }
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Authorization token': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization'
+        },
+        'x-api-key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'x-api-key'
+        }
+    },
 }
