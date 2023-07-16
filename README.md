@@ -65,3 +65,17 @@ shipment_methods >  **E** Express, **S** Standar y **P** Pickup sucursal (gratis
 
 ## Documentacion
 - Se utilizo la generacion de documentacion con swagger la cual se accede desde el indice de la aplicacion (es necesario haber iniciado sesion en el panel de admin de django previamente para poder verla).
+
+## Cliente de solicitudes HTTP
+Para testear los endpoints en este caso utilice
+https://insomnia.rest/
+
+El proyecto incluye un fichero llamado **insomnia_requests** por si quereis testear la api de una forma mas sencilla
+
+## Django Tests
+Para correr los tests de django dentro de docker yo suelo utilizar:
+
+```sh
+docker run -it <docker_image_web> bash
+python3 manage.py test
+```
