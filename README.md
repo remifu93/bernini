@@ -4,6 +4,7 @@
 git clone https://github.com/remifu93/bernini
 cd bernini
 docker-compose up --build
+crear el .env siguiendo el fichero .enx.example de ejemplo
 ```
 
 Para ingresar al proyecto ir a la url http://127.0.0.1:8000/
