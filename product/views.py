@@ -40,7 +40,7 @@ por ejemplo al agregar, updatear, etc un producto y eso se podria hacer desde el
 
 La cache limita el numero de requests asi que tener en cuenta por el trottle, por si veis que no funciona
 """
-# @method_decorator(cache_page(60*60), name='dispatch')
+@method_decorator(cache_page(60*60), name='dispatch')
 class ProductListAPIView(generics.ListAPIView):
     serializer_class = ProductSerializer
     permission_classes = [AllowAny, ]
